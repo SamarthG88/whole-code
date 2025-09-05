@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Textfields</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f8fa;
+      color: #0A2740;
+      padding: 20px;
+    }
+
+    h2 {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .form-section {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 15px;
+    }
+
+    label {
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+
+    input, textarea {
+      padding: 8px 12px;
+      font-size: 14px;
+      border: 1.5px solid #ccc;
+      border-radius: 6px;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    input:focus, textarea:focus {
+      border-color: #0A66C2;
+    }
+
+    .status {
+      font-size: 12px;
+      margin-top: 4px;
+    }
+
+    /* Input States */
+    .success {
+      border-color: #22c55e;
+    }
+    .success + .status {
+      color: #22c55e;
+    }
+
+    .warning {
+      border-color: #f59e0b;
+    }
+    .warning + .status {
+      color: #f59e0b;
+    }
+
+    .error {
+      border-color: #ef4444;
+    }
+    .error + .status {
+      color: #ef4444;
+    }
+
+    /* Input with icon */
+    .input-icon {
+      display: flex;
+      align-items: center;
+      border: 1.5px solid #ccc;
+      border-radius: 6px;
+      padding-right: 8px;
+    }
+
+    .input-icon input {
+      border: none;
+      flex: 1;
+      padding: 8px 12px;
+      outline: none;
+      font-size: 14px;
+    }
+
+    .icon {
+      width: 18px;
+      height: 18px;
+      background: gray;
+      border-radius: 2px;
+      margin-left: 8px;
+    }
+
+    textarea {
+      resize: none;
+      min-height: 100px;
+    }
+
+    /* Info Box */
+    .info-box {
+      grid-column: span 3;
+      background: #e9edf5;
+      border-left: 4px solid #0A66C2;
+      padding: 12px;
+      font-size: 14px;
+    }
+
+    .info-box strong {
+      display: block;
+      margin-bottom: 6px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>06. Textfields</h2>
+
+  <div class="form-section">
+    
+    <!-- Label + Placeholder -->
+    <div class="form-group">
+      <label>Label</label>
+      <input type="text" placeholder="Placeholder">
+      <span class="status">Status</span>
+    </div>
+
+    <!-- Info Box -->
+    <div class="info-box">
+      <strong>Input Rules:</strong>
+      → Padding Left = 2 × font size <br>
+      → Padding Top-Bottom = 1 × font size <br>
+      → Padding Right (icon) = 2 × font size
+    </div>
+
+    <!-- Empty Column -->
+    <div></div>
+
+    <!-- No label + no status -->
+    <div class="form-group">
+      <input type="text" placeholder="Input Text">
+    </div>
+
+    <!-- No label + status -->
+    <div class="form-group">
+      <input type="text" placeholder="Input Text">
+      <span class="status">Status</span>
+    </div>
+
+    <!-- Input State -->
+    <div class="form-group">
+      <input type="text" class="success" placeholder="Input Text">
+      <span class="status">Success !</span>
+
+      <input type="text" class="warning" placeholder="Input Text" style="margin-top:10px;">
+      <span class="status">Warning !</span>
+
+      <input type="text" class="error" placeholder="Input Text" style="margin-top:10px;">
+      <span class="status">Error !</span>
+    </div>
+
+    <!-- Input with Label -->
+    <div class="form-group">
+      <label>Label Sample</label>
+      <input type="text" placeholder="Input Text">
+    </div>
+
+    <!-- Input with Label + Status -->
+    <div class="form-group">
+      <label>Label Sample</label>
+      <input type="text" placeholder="Input Text Here">
+      <span class="status">Empty</span>
+    </div>
+
+    <!-- Empty -->
+    <div></div>
+
+    <!-- Input with Icon -->
+    <div class="form-group">
+      <label>Label Sample</label>
+      <div class="input-icon">
+        <input type="text" placeholder="Input Text icon">
+        <div class="icon"></div>
+      </div>
+      <span class="status">Status</span>
+    </div>
+
+    <!-- Text Area -->
+    <div class="form-group">
+      <label>Label Sample</label>
+      <textarea placeholder="Enter Text Here"></textarea>
+    </div>
+  </div>
+
+</body>
+</html>
