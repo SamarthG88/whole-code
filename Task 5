@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upload UI</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f7f9;
+      padding: 20px;
+    }
+    .box {
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 20px;
+      max-width: 400px;
+    }
+    .file-input {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .file-input input[type="file"] {
+      display: none;
+    }
+    .file-input label {
+      padding: 8px 14px;
+      background: #092C4C;
+      color: #fff;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .file-name {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      background: #fafafa;
+    }
+    .uploaded {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .uploaded .status {
+      color: green;
+      font-weight: bold;
+    }
+    .dropzone {
+      border: 2px dashed #bbb;
+      padding: 30px;
+      text-align: center;
+      border-radius: 6px;
+      color: #777;
+    }
+    .dropzone span {
+      color: #092C4C;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .btn-disabled {
+      margin-top: 10px;
+      padding: 10px;
+      width: 100%;
+      background: #ccc;
+      border: none;
+      border-radius: 6px;
+      color: #fff;
+      cursor: not-allowed;
+    }
+    .progress {
+      margin-top: 12px;
+      height: 20px;
+      width: 100%;
+      border-radius: 8px;
+      background: #e0e0e0;
+      overflow: hidden;
+    }
+    .progress-bar {
+      height: 100%;
+      width: 50%;
+      background: #092C4C;
+      color: #fff;
+      text-align: center;
+      font-size: 12px;
+      line-height: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- File input -->
+  <div class="box">
+    <div class="file-input">
+      <div class="file-name">No file selected</div>
+      <label for="file1">Browse</label>
+      <input type="file" id="file1">
+    </div>
+  </div>
+
+  <!-- Uploading -->
+  <div class="box uploaded">
+    <div>Sample.jpg</div>
+    <div class="status">Uploading...</div>
+  </div>
+
+  <!-- Uploaded -->
+  <div class="box uploaded">
+    <div>Sample.jpg</div>
+    <div class="status">✔</div>
+  </div>
+
+  <!-- Dropzone -->
+  <div class="box">
+    <div class="dropzone">
+      Drag n Drop here <br> Or <span>Browse</span>
+    </div>
+    <button class="btn-disabled">Upload Now</button>
+  </div>
+
+  <!-- Dropzone -->
+  <div class="box">
+    <div class="dropzone">
+      Drag n Drop here <br> Or <span>Browse</span>
+    </div>
+    <button class="btn-disabled">Upload Now</button>
+  </div>
+
+  <!-- Dropzone with progress -->
+  <div class="box">
+    <div>Sample.png</div>
+    <div class="progress">
+      <div class="progress-bar">50%</div>
+    </div>
+    <button class="btn-disabled">Upload Now</button>
+  </div>
+
+</body>
+</html>
